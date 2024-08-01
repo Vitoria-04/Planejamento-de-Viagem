@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planejamento de Viagem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #E6E6FA;
+        }
+
+        header {
+            background-color: #4682B4;
+            color: white;
+            width: 100%;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        main {
+            margin: 2rem;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        #travel-planner {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        select, input[type="number"], input[type="text"], .checkbox-group {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .checkbox-group label {
+            display: block;
+            margin: 0.5rem 0;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #summary {
+            margin-top: 2rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Planejamento de Viagem</h1>
+    </header>
+    <main>
+        <section id="travel-planner">
+            <h2>Planeje sua viagem</h2>
+            <form id="plan-form">
+                <div class="form-group">
+                    <label for="destination">Destino:</label>
+                    <select id="destination">
+                        <option value="">Selecione um destino</option>
+                        <option value="Paris">Paris - França</option>
+                        <option value="Nova York">Nova York - Estados Unidos</option>
+                        <option value="Tóquio">Tóquio - Japão</option>
+                        <option value="Londres">Londres - Reino Unido</option>
+                        <option value="Roma">Roma - Itália</option>
+                        <option value="Sydney">Sydney - Austrália</option>
+                        <option value="Barcelona">Barcelona - Espanha</option>
+                        <option value="Dubai">Dubai - Emirados Árabes Unidos</option>
+                        <option value="Bangkok">Bangkok - Tailândia</option>
+                        <option value="Istambul">Istambul - Turquia</option>
+                        <option value="Cairo">Cairo - Egito</option>
+                        <option value="São Paulo">São Paulo - Brasil</option>
+                        <option value="Buenos Aires">Buenos Aires - Argentina</option>
+                        <option value="Mumbai">Mumbai - Índia</option>
+                        <option value="Los Angeles">Los Angeles - Estados Unidos</option>
+                        <option value="Outros">Nenhuma das anteriores</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="duration">Duração da viagem (dias):</label>
+                    <input type="number" id="duration" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="custom-destination">Local escolhido (caso seu destino não esteja na lista):</label>
+                    <input type="text" id="custom-destination" placeholder="Ex: Rio de Janeiro, Las Vegas">
+                </div>
+                <div class="form-group">
+                    <label>Atividades:</label>
+                    <div class="checkbox-group" id="activities">
+                        <label><input type="checkbox" value="Passeio de barco"> Passeio de barco</label>
+                        <label><input type="checkbox" value="Visita a museus"> Visita a museus</label>
+                        <label><input type="checkbox" value="Caminhada ao ar livre"> Caminhada ao ar livre</label>
+                        <label><input type="checkbox" value="Degustação gastronômica"> Degustação gastronômica</label>
+                        <label><input type="checkbox" value="Visita a pontos turísticos"> Visita a pontos turísticos</label>
+                        <label><input type="checkbox" value="Patrimônios históricos e culturais"> Patrimônios históricos e culturais</label>
+                        <label><input type="checkbox" value="Galerias"> Galerias</label>
+                        <label><input type="checkbox" value="Praias e resorts"> Praias e resorts</label>
+                        <label><input type="checkbox" value="Natureza e aventuras"> Natureza e aventuras</label>
+                        <label><input type="checkbox" value="Eventos e festivais"> Eventos e festivais</label>
+                        <label><input type="checkbox" value="Relaxamento e bem-estar"> Relaxamento e bem-estar</label>
+                        <label><input type="checkbox" value="Visitas a igrejas"> Visitas a igrejas</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="landmarks">Pontos turísticos:</label>
+                    <input type="text" id="landmarks" placeholder="Ex: Torre Eiffel, Central Park">
+                </div>
+                <div class="form-group">
+                    <label>Checklist:</label>
+                    <div class="checkbox-group" id="checklist">
+                        <label><input type="checkbox" value="Malas de Viagem"> Malas de Viagem</label>
+                        <label><input type="checkbox" value="Passaporte"> Passaporte</label>
+                        <label><input type="checkbox" value="Visto"> Visto</label>
+                        <label><input type="checkbox" value="Seguro de viagem"> Seguro de viagem</label>
+                        <label><input type="checkbox" value="Dinheiro local"> Dinheiro local</label>
+                        <label><input type="checkbox" value="Roupas adequadas ao clima"> Roupas adequadas ao clima</label>
+                        <label><input type="checkbox" value="Guia de viagem"> Guia de viagem</label>
+                        <label><input type="checkbox" value="Identidade/RG"> Identidade/RG</label>
+                        <label><input type="checkbox" value="Medicamentos prescritos"> Medicamentos prescritos</label>
+                        <label><input type="checkbox" value="Carregadores para dispositivos eletrônicos"> Carregadores para dispositivos eletrônicos</label>
+                        <label><input type="checkbox" value="Mapa do destino"> Mapa do destino</label>
+                        <label><input type="checkbox" value="Mochila ou bolsa para passeios diários"> Mochila ou bolsa para passeios diários</label>
+                    </div>
+                </div>
+                <button type="button" id="submit-btn">Enviar</button>
+            </form>
+            <section id="summary">
+                <h2>Resumo da Viagem</h2>
+                <p id="summary-text">Preencha o formulário e clique em "Enviar" para ver o resumo da viagem.</p>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>Feito por: Abraão, Luana, Matheus N., e Vitória</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const submitButton = document.getElementById('submit-btn');
+            const summaryText = document.getElementById('summary-text');
+
+            submitButton.addEventListener('click', () => {
+                const destination = document.getElementById('destination').value;
+                const duration = document.getElementById('duration').value;
+                const customDestination = document.getElementById('custom-destination').value;
+                const activities = Array.from(document.querySelectorAll('#activities input:checked'))
+                    .map(checkbox => checkbox.value);
+                const landmarks = document.getElementById('landmarks').value;
+                const checklist = Array.from(document.querySelectorAll('#checklist input:checked'))
+                    .map(checkbox => checkbox.value);
+
+                if (!destination && !customDestination) {
+                    summaryText.textContent = 'Por favor, preencha todos os campos obrigatórios.';
+                    return;
+                }
+
+                let activitiesText = activities.length ? activities.join(', ') : 'Nenhuma atividade selecionada';
+                let checklistText = checklist.length ? checklist.join(', ') : 'Nenhum item selecionado no checklist';
+                let finalDestination = destination !== 'Outros' ? destination : customDestination;
+
+                summaryText.innerHTML = `
+                    <strong>Resumo da Viagem:</strong><br>
+                    Destino: ${finalDestination}<br>
+                    Duração: ${duration} dias<br>
+                    Atividades: ${activitiesText}<br>
+                    Pontos turísticos: ${landmarks}<br>
+                    Checklist: ${checklistText}
+                `;
+            });
+        });
+    </script>
+</body>
+</html>
